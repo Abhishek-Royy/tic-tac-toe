@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    padding-inline: 5vw;
+}
+
+h1 {
+    font-size: 3vw;
+    color: #12372A;
+}
+
+.squre {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.482);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.squre-box {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #436850;
+    flex-direction: column;
+}
+
+.squre>.box {
+    width: 85px;
+    height: 85px;
+    border-radius: 7px;
+    font-size: 50px;
+    border: none;
+    background-color: #e1fec6;
+    color: rgb(65, 0, 72);
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.647);
+    font-weight: 600;
+}
+
+.squre>.box:active {
+    scale: 0.98;
+}
+
+.winner {
+    width: 30%;
+    height: 4vw;
+    background-color: #fbfadad2;
+    margin-top: 2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.winner>h1 {
+    font-size: 2.5vw;
+}
+
+.hide {
+    display: none;
+}
+
+.game-result {
+    width: 100%;
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-result>button {
+    padding: 0.8vw;
+    margin-inline: 2vw;
+    background-color: #12372A;
+    color: aliceblue;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+footer {
+    width: 100%;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+footer>span:hover {
+    color: #c800ff;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 10vw;
+        margin-bottom: 1vw;
+    }
+
+    .squre-box {
+        height: 70%;
+    }
+
+    .squre {
+        max-width: 90%;
+        overflow-x: hidden;
+    }
+
+    .squre>.box {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .game-result {
+        margin-top: 10vw;
+    }
+
+    .game-result>button {
+        width: 40vw;
+        padding: 15px;
+        margin-inline: 5vw;
+        font-size: 16px;
+    }
+
+
+    footer {
+        margin-top: 8vw;
+    }
+
+    .winner {
+        width: 90%;
+        height: 10vw;
+        margin-top: 5vw;
+    }
+
+    .winner>h1 {
+        font-size: 25px;
+    }
+}
