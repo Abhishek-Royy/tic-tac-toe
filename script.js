@@ -17,6 +17,12 @@ const winPatterns = [
   [2, 4, 6],
 ];
 
+const resetGamee = () => {
+  turnX = true;
+  enableAfterMatch();
+  hideCont.style.display = "none";
+};
+
 boxes.forEach((clickBox) => {
   clickBox.addEventListener("click", () => {
     console.log("Clicked");
@@ -30,11 +36,11 @@ boxes.forEach((clickBox) => {
     }
     clickBox.disabled = true;
 
-    checkInput();
+    checkWinner();
   });
 });
 
-const checkInput = () => {
+const checkWinner = () => {
   for (let pattern of winPatterns) {
     // console.log(pattern[0], pattern[1], pattern[2]);
 
@@ -42,9 +48,9 @@ const checkInput = () => {
     let position2 = boxes[pattern[1]].innerHTML;
     let position3 = boxes[pattern[2]].innerHTML;
 
-    if (position1 != "" && position2 != "" && position1 != "") {
+    if (position1 != "" && position2 != "" && position3 != "") {
       if (position1 === position2 && position2 === position3) {
-        win.innerHTML = `<h1>Winner: ${position1}</h1>`;
+        win.innerHTML = `<h1>Congratulations Winner is: ${position1}</h1>`;
         hideCont.style.display = "block";
         console.log("Winner", position1);
 
@@ -52,6 +58,24 @@ const checkInput = () => {
         disableAfterMatch();
       }
     }
+  }
+  drawMatch();
+};
+
+const drawMatch = () => {
+  let count = 0;
+  for (let pattern of winPatterns) {
+    let position1 = boxes[pattern[0]].innerHTML;
+    let position2 = boxes[pattern[1]].innerHTML;
+    let position3 = boxes[pattern[2]].innerHTML;
+
+    if (position1 != "" && position2 != "" && position3 != "") {
+      count++;
+    }
+  }
+  if (count === winPatterns.length) {
+    win.innerHTML = `<h1>☺pps! Match is Draw</h1>`;
+    hideCont.style.display = "block";
   }
 };
 
@@ -62,7 +86,18 @@ const matchGlow = (pattern) => {
 };
 
 const disableAfterMatch = () => {
-  for (box of boxes) {
+  for (let box of boxes) {
     box.disabled = true;
   }
 };
+
+const enableAfterMatch = () => {
+  for (let box of boxes) {
+    box.disabled = false;
+    box.innerHTML = "";
+    box.style.color = "";
+  }
+};
+
+resetGame.addEventListener("click", resetGamee);
+newGame.addEventListener("click", resetGamee);

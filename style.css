@@ -146,6 +146,8 @@ footer>span:hover {
 
     footer {
         margin-top: 8vw;
+        font-size: 20px;
+        background-color: #e1fec6;
     }
 
     .winner {
@@ -155,6 +157,6 @@ footer>span:hover {
     }
 
     .winner>h1 {
-        font-size: 25px;
+        font-size: 23px;
     }
 }
